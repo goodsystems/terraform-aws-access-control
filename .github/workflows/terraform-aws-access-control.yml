@@ -1,0 +1,17 @@
+name: terraform-aws-access-control
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+  push:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  call-workflow:
+    uses: goodsystems/terraform-reusable-workflows/.github/workflows/terraform-reusable-workflow.yml@v2
+    with:
+      project: "terraform-aws-access-control"
