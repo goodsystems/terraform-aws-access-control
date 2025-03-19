@@ -1,1 +1,2 @@
-env_type = "production"
+environment_name = "production"
+environment_slug = "prd"

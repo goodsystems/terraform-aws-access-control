@@ -1,1 +1,2 @@
-env_type = "staging"
+environment_name = "staging"
+environment_slug = "stg"
