@@ -1,5 +1,16 @@
+terraform {
+  required_version = "~> 1.5.7"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.89.0"
+    }
+  }
+}
+
+# Provider definition
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 
   default_tags {
     tags = {
@@ -7,15 +18,6 @@ provider "aws" {
       "Environment_slug" = var.environment_slug,
       "Project"          = var.project,
       "ManagedBy"        = "Terraform"
-    }
-  }
-}
-
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.44.0"
     }
   }
 }
